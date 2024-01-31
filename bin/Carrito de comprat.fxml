@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Button layoutX="50.0" layoutY="342.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <Button layoutX="426.0" layoutY="342.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <Text layoutX="232.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrito De Compra" />
+      <Text layoutX="96.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelicula Seleccionada " />
+      <TextField layoutX="80.0" layoutY="148.0" prefHeight="26.0" prefWidth="238.0" />
+      <Text layoutX="72.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio Final: " wrappingWidth="76.59100341796875" />
+      <TextField layoutX="80.0" layoutY="200.0" prefHeight="26.0" prefWidth="238.0" />
+      <TextField layoutX="80.0" layoutY="252.0" prefHeight="26.0" prefWidth="238.0" />
+   </children>
+</AnchorPane>

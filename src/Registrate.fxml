@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="273.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrate" />
+      <TextField layoutX="309.0" layoutY="164.0" prefHeight="35.0" prefWidth="244.0" />
+      <TextField layoutX="309.0" layoutY="207.0" prefHeight="35.0" prefWidth="244.0" />
+      <TextField layoutX="309.0" layoutY="78.0" prefHeight="35.0" prefWidth="244.0" />
+      <TextField layoutX="309.0" layoutY="121.0" prefHeight="35.0" prefWidth="244.0" />
+      <TextField layoutX="309.0" layoutY="250.0" prefHeight="35.0" prefWidth="244.0" />
+      <TextField layoutX="309.0" layoutY="292.0" prefHeight="35.0" prefWidth="244.0" />
+      <Text layoutX="211.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" />
+      <Text layoutX="211.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre" />
+      <Button layoutX="438.0" layoutY="340.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <Text layoutX="211.0" layoutY="186.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Apellido" />
+      <Text layoutX="211.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Sexo" />
+      <Text layoutX="211.0" layoutY="272.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
+      <Text layoutX="211.0" layoutY="314.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contacto" />
+      <ImageView fitHeight="215.0" fitWidth="151.0" layoutX="32.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

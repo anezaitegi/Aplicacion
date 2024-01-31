@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text fx:id="ticket" layoutX="288.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket" />
+      <Button fx:id="atras5" layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Guardar" />
+      <Button fx:id="inicio" layoutX="39.0" layoutY="347.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Inicio" />
+      <Label fx:id="informacionCompra" layoutX="201.0" layoutY="52.0" prefHeight="324.0" prefWidth="211.0" />
+   </children>
+</AnchorPane>
