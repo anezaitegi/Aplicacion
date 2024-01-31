@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pantallaSeguir" maxHeight="-Infinity" maxWidth="-Infinity" 
+minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#cambiarVista" 
+prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" 
+xmlns:fx="http://javafx.com/fxml/1" fx:controller="BienvenidaC">
+   <children>
+      <Label blendMode="COLOR_BURN" layoutX="-39.0" layoutY="-20.0" text="CINE">
+         <font>
+            <Font name="Georgia Bold" size="240.0" />
+         </font>
+      </Label>
+      <Label blendMode="COLOR_BURN" layoutX="-87.0" layoutY="200.0" text="USURBIL">
+         <font>
+            <Font name="Georgia Bold" size="150.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="117.0" prefHeight="82.0" prefWidth="338.0" text="¡BIENVENIDO!">
+         <font>
+            <Font name="Georgia Bold" size="42.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="188.0" fitWidth="169.0" layoutX="431.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../Downloads/Logo%20sin%20fondo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="167.0" layoutY="187.0" text="Estas en una area privada, continua bajo tu responsabilidad.">
+         <font>
+            <Font name="Georgia" size="10.0" />
+         </font>
+      </Label>
+      <Label layoutX="161.0" layoutY="200.0" text="Haz click en cualquier lugar">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
