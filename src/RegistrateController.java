@@ -3,7 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
-public class PleaseProvideControllerClassName {
+public class RegistrateController {
 
     @FXML
     private TextField apellido_r;

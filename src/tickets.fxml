@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketsController">
    <children>
       <Text fx:id="ticket" layoutX="288.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket" />
       <Button fx:id="atras5" layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Guardar" />

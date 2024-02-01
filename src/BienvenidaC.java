@@ -23,6 +23,6 @@ public class BienvenidaC implements Initializable {
     // Pasar al login
     @FXML
     void cambiarVista(MouseEvent event) throws IOException {
-        Main.setRoot("Login");
+        Main.setRoot("Cines");
     }
 }
