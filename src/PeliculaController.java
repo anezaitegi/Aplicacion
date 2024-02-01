@@ -1,9 +1,19 @@
-import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class PeliculaController {
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+
+public class PeliculaController implements Initializable {
+
+    private String cine;
 
     @FXML
     private Button atras;
@@ -33,6 +43,20 @@ public class PeliculaController {
     private ImageView img8;
 
     @FXML
-    private Text seleccionado;
+    private Label nombreCine;
+
+    public void setCine(String cine) {
+        this.cine = cine;
+    }
+
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        nombreCine.setText(cine);
+    }
+
+    @FXML
+    void volver(ActionEvent event) throws IOException {
+        Main.setRoot("Cines");
+    }
 
 }
