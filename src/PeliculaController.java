@@ -3,7 +3,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 
-public class PleaseProvideControllerClassName {
+public class PeliculaController {
 
     @FXML
     private Button atras;
