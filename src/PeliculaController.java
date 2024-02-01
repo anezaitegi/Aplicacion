@@ -1,5 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -13,7 +12,7 @@ import javafx.scene.image.ImageView;
 
 public class PeliculaController implements Initializable {
 
-    private String cine;
+    private static String cineNombre;
 
     @FXML
     private Button atras;
@@ -45,13 +44,13 @@ public class PeliculaController implements Initializable {
     @FXML
     private Label nombreCine;
 
-    public void setCine(String cine) {
-        this.cine = cine;
+    public static void setCineNombre(String cine) {
+        cineNombre = cine;
     }
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
-        nombreCine.setText(cine);
+        nombreCine.setText(cineNombre);
     }
 
     @FXML

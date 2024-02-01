@@ -7,8 +7,6 @@ import javafx.scene.image.ImageView;
 
 public class CinesController {
 
-    private PeliculaController peliC = new PeliculaController();
-
     @FXML
     private Button cineDonosti;
 
@@ -29,19 +27,19 @@ public class CinesController {
 
     @FXML
     void infoDonos(ActionEvent event) throws IOException {
-        peliC.setCine("Donostia");
+        PeliculaController.setCineNombre("Donostia");
         Main.setRoot("Pelicula");
     }
 
     @FXML
     void infoLasarte(ActionEvent event) throws IOException {
-        peliC.setCine("Lasarte");
+        PeliculaController.setCineNombre("Lasarte");
         Main.setRoot("Pelicula");
     }
 
     @FXML
     void infoUsurbil(ActionEvent event) throws IOException {
-        peliC.setCine("Usurbil");
+        PeliculaController.setCineNombre("Usurbil");
         Main.setRoot("Pelicula");
     }
 
