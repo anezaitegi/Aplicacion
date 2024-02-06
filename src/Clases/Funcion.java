@@ -1,21 +1,24 @@
 package Clases;
 
+import java.sql.Time;
 import java.util.Date;
 
-public class Proyeccion {
+public class Funcion {
     private int id;
     private Sala sala;
     private Pelicula peli;
     private Date fecha;
+    private Time hora;
 
-    public Proyeccion() {
+    public Funcion() {
     }
 
-    public Proyeccion(int id, Sala sala, Pelicula peli, Date fecha) {
+    public Funcion(int id, Sala sala, Pelicula peli, Date fecha, Time hora) {
         this.id = id;
         this.sala = sala;
         this.peli = peli;
         this.fecha = fecha;
+        this.hora = hora;
     }
 
     public int getId() {
@@ -48,6 +51,14 @@ public class Proyeccion {
 
     public void setFecha(Date fecha) {
         this.fecha = fecha;
+    }
+
+    public Time getHora() {
+        return hora;
+    }
+
+    public void setHora(Time hora) {
+        this.hora = hora;
     }
 
 }

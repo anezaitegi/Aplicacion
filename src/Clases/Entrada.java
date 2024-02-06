@@ -6,13 +6,13 @@ public class Entrada {
     private int id;
     private Date fecha;
     private Cliente cliente;
-    private Proyeccion listaProyecciones[];
+    private Funcion listaProyecciones[];
     private double precio;
 
     public Entrada() {
     }
 
-    public Entrada(int id, Date fecha, Cliente cliente, Proyeccion[] listaProyecciones, double precio) {
+    public Entrada(int id, Date fecha, Cliente cliente, Funcion[] listaProyecciones, double precio) {
         this.id = id;
         this.fecha = fecha;
         this.cliente = cliente;
@@ -44,11 +44,11 @@ public class Entrada {
         this.cliente = cliente;
     }
 
-    public Proyeccion[] getListaProyecciones() {
+    public Funcion[] getListaProyecciones() {
         return listaProyecciones;
     }
 
-    public void setListaProyecciones(Proyeccion[] listaProyecciones) {
+    public void setListaProyecciones(Funcion[] listaProyecciones) {
         this.listaProyecciones = listaProyecciones;
     }
 

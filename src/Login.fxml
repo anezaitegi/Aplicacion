@@ -3,19 +3,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LoginController">
    <children>
-      <Button layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Aceptar" />
-      <Button layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Aceptar" />
-      <Button layoutX="28.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Aceptar" />
-      <Text layoutX="289.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Login" />
-      <Text layoutX="94.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Usuario" />
-      <Text layoutX="154.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" />
-      <TextField layoutX="200.0" layoutY="101.0" prefHeight="26.0" prefWidth="223.0" />
-      <Button layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Aceptar" />
-      <TextField layoutX="200.0" layoutY="187.0" prefHeight="26.0" prefWidth="223.0" />
-      <Text layoutX="101.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" />
+      <Button fx:id="continuar" layoutX="471.0" layoutY="339.0" mnemonicParsing="false" onAction="#verficar" prefHeight="35.0" prefWidth="114.0" text="Aceptar" />
+      <Button fx:id="atras" layoutX="14.0" layoutY="339.0" mnemonicParsing="false" onAction="#volver" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <Text layoutX="242.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOGIN">
+         <font>
+            <Font size="40.0" />
+         </font></Text>
+      <Text layoutX="152.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DNI" wrappingWidth="34.52996826171875">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
+      <TextField fx:id="Dni" layoutX="188.0" layoutY="135.0" prefHeight="26.0" prefWidth="223.0" />
+      <TextField fx:id="pass" layoutX="188.0" layoutY="184.0" prefHeight="26.0" prefWidth="223.0" />
+      <Text layoutX="103.0" layoutY="203.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Contraseña" wrappingWidth="78.02423095703125">
+         <font>
+            <Font size="15.0" />
+         </font></Text>
    </children>
 </AnchorPane>

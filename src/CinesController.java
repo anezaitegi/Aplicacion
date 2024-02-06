@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,19 +24,19 @@ public class CinesController {
     private ImageView imgUsurbil;
 
     @FXML
-    void infoDonos(ActionEvent event) throws IOException {
+    void infoDonos(ActionEvent event) throws Exception {
         PeliculaController.setCineNombre("Donostia");
         Main.setRoot("Pelicula");
     }
 
     @FXML
-    void infoLasarte(ActionEvent event) throws IOException {
+    void infoLasarte(ActionEvent event) throws Exception {
         PeliculaController.setCineNombre("Lasarte");
         Main.setRoot("Pelicula");
     }
 
     @FXML
-    void infoUsurbil(ActionEvent event) throws IOException {
+    void infoUsurbil(ActionEvent event) throws Exception {
         PeliculaController.setCineNombre("Usurbil");
         Main.setRoot("Pelicula");
     }

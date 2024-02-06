@@ -8,19 +8,23 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeliculaController">
    <children>
-      <ImageView fx:id="img1" fitHeight="132.0" fitWidth="131.0" layoutX="29.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img2" fitHeight="132.0" fitWidth="131.0" layoutX="171.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img3" fitHeight="132.0" fitWidth="131.0" layoutX="312.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img4" fitHeight="132.0" fitWidth="131.0" layoutX="454.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img5" fitHeight="132.0" fitWidth="131.0" layoutX="29.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img6" fitHeight="132.0" fitWidth="131.0" layoutX="171.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img7" fitHeight="132.0" fitWidth="131.0" layoutX="312.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
-      <ImageView fx:id="img8" fitHeight="132.0" fitWidth="131.0" layoutX="454.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img1" fitHeight="186.0" fitWidth="131.0" layoutX="29.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img2" fitHeight="186.0" fitWidth="131.0" layoutX="171.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img3" fitHeight="186.0" fitWidth="131.0" layoutX="312.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img4" fitHeight="186.0" fitWidth="131.0" layoutX="454.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="atras" layoutX="42.0" layoutY="347.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="125.0" text="Atras" />
       <Label fx:id="nombreCine" layoutX="183.0" layoutY="14.0" prefHeight="45.0" prefWidth="238.0">
          <font>
             <Font size="31.0" />
          </font>
       </Label>
+      <Button fx:id="boton1" layoutX="51.0" layoutY="299.0" mnemonicParsing="false" onAction="#elegir1" prefHeight="32.0" prefWidth="85.0" text="Elegir" />
+      <Button fx:id="boton2" layoutX="194.0" layoutY="299.0" mnemonicParsing="false" onAction="#elegir2" prefHeight="32.0" prefWidth="85.0" text="Elegir" />
+      <Button fx:id="boton3" layoutX="334.0" layoutY="299.0" mnemonicParsing="false" onAction="#elegir3" prefHeight="32.0" prefWidth="85.0" text="Elegir" />
+      <Button fx:id="boton4" layoutX="474.0" layoutY="299.0" mnemonicParsing="false" onAction="#elegir4" prefHeight="32.0" prefWidth="85.0" text="Elegir" />
+      <Label fx:id="peli1" layoutX="37.0" layoutY="266.0" prefHeight="18.0" prefWidth="131.0" />
+      <Label fx:id="peli2" layoutX="178.0" layoutY="266.0" prefHeight="18.0" prefWidth="131.0" />
+      <Label fx:id="peli3" layoutX="312.0" layoutY="266.0" prefHeight="18.0" prefWidth="131.0" />
+      <Label fx:id="peli4" layoutX="454.0" layoutY="266.0" prefHeight="18.0" prefWidth="131.0" />
    </children>
 </AnchorPane>
