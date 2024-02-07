@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Seleccion1Controller">
    <children>
       <ImageView fx:id="img" fitHeight="279.0" fitWidth="200.0" layoutX="23.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <DatePicker fx:id="calendario" layoutX="321.0" layoutY="53.0" onAction="#elegirFecha" />
       <Button fx:id="atras" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#atras" prefHeight="35.0" prefWidth="114.0" text="Atras" />
-      <Label layoutX="268.0" layoutY="56.0" text="Fecha:">
-         <font>
-            <Font size="14.0" />
-         </font>
-      </Label>
-      <Label fx:id="funcion1" layoutX="268.0" layoutY="120.0" onMouseClicked="#elegir1" prefHeight="52.0" prefWidth="273.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="elegir3" layoutX="268.0" layoutY="245.0" onMouseClicked="#elegir3" prefHeight="52.0" prefWidth="273.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label fx:id="elegir2" layoutX="268.0" layoutY="184.0" onMouseClicked="#elegir2" prefHeight="52.0" prefWidth="273.0">
-         <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
    </children>
 </AnchorPane>

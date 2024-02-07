@@ -65,4 +65,29 @@ public class DAO {
         return listaPeliculas;
     }
 
+    public static Cliente[] cargarClientes() throws Exception {
+        PreparedStatement st = con.prepareStatement(infoTabla("cliente"));
+        ResultSet rs = st.executeQuery();
+        Cliente[] listaClientes = new Cliente[100];
+        int contador = 0;
+        while (rs.next()) {
+            listaClientes[contador] = new Cliente(rs.getString(1), rs.getString(3), rs.getString(4), rs.getString(5),
+                    rs.getString(2), rs.getString(6));
+            contador++;
+        }
+        return listaClientes;
+    }
+
+    public static Entrada[] cargarEntradas() throws SQLException {
+        PreparedStatement st = con.prepareStatement(infoTabla("entrada"));
+        ResultSet rs = st.executeQuery();
+        Entrada[] listaEntradas = new Entrada[500];
+        int contador = 0;
+        while (rs.next()) {
+            listaEntradas[contador] = new Entrada(rs.getInt(1), rs.getDate(3), null, null, rs.getDouble(4));
+            contador++;
+        }
+        return listaEntradas;
+    }
+
 }

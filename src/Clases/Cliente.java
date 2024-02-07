@@ -3,7 +3,7 @@ package Clases;
 public class Cliente {
     private String DNI;
     private String nombre;
-    private String apellidos;
+    private String apellido;
     private boolean mujer;
     private String password;
     private String telefono;
@@ -11,11 +11,17 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String dNI, String nombre, String apellidos, boolean mujer, String password, String telefono) {
+    public Cliente(String dNI, String nombre, String apellido, String sexo, String password, String telefono) throws Exception {
         DNI = dNI;
         this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.mujer = mujer;
+        this.apellido = apellido;
+        if (sexo.equals("Mujer")) {
+            this.mujer = true;
+        } else if (sexo.equals("Hombre")) {
+            this.mujer = false;
+        } else {
+            throw new Exception("Sexo no válido");
+        }
         this.password = password;
         this.telefono = telefono;
     }
@@ -49,13 +55,13 @@ public class Cliente {
         }
     }
 
-    public String getApellidos() {
-        return apellidos;
+    public String getApellido() {
+        return apellido;
     }
 
-    public void setApellidos(String apellidos) throws Exception {
+    public void setApellido(String apellidos) throws Exception {
         if (apellidos.length() <= 150) {
-            this.apellidos = apellidos;
+            this.apellido = apellidos;
         } else {
             throw new Exception("Texto demasiado largo");
         }

@@ -95,7 +95,7 @@ public class PeliculaController implements Initializable {
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         nombreCine.setText(cineNombre);
-        Button[] b = {boton1, boton2, boton3, boton4};
+        Button[] b = { boton1, boton2, boton3, boton4 };
         this.botones = b;
         Label[] t = { peli1, peli2, peli3, peli4 };
         this.titulos = t;

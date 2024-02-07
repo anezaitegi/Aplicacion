@@ -99,4 +99,8 @@ public class Pelicula {
         }
     }
 
+    public String toStringTituloDuracion() {
+        return titulo + " " + duracion + " min";
+    }
+
 }

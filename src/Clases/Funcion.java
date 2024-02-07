@@ -61,4 +61,9 @@ public class Funcion {
         this.hora = hora;
     }
 
+    @Override
+    public String toString() {
+        return peli.toStringTituloDuracion() + " - " + hora + " - " +fecha+ " - "+sala.getNombre() + " - 7,5 euros";
+    }
+
 }

@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarritoController">
    <children>
-      <Button layoutX="50.0" layoutY="342.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Atras" />
-      <Button layoutX="426.0" layoutY="342.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Atras" />
-      <Text layoutX="232.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Carrito De Compra" />
-      <Text layoutX="96.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pelicula Seleccionada " />
-      <TextField layoutX="80.0" layoutY="148.0" prefHeight="26.0" prefWidth="238.0" />
-      <Text layoutX="72.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Precio Final: " wrappingWidth="76.59100341796875" />
-      <TextField layoutX="80.0" layoutY="200.0" prefHeight="26.0" prefWidth="238.0" />
-      <TextField layoutX="80.0" layoutY="252.0" prefHeight="26.0" prefWidth="238.0" />
+      <Button fx:id="volver" layoutX="38.0" layoutY="342.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="35.0" prefWidth="114.0" text="Anular" />
+      <Button fx:id="comprar" layoutX="460.0" layoutY="342.0" mnemonicParsing="false" onAction="#comprar" prefHeight="35.0" prefWidth="114.0" text="Comprar" />
+      <Label layoutX="255.0" layoutY="14.0" text="Carrito">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="listado" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0" />
+      <Label layoutX="38.0" layoutY="294.0" text="Precio final:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="precioResultado" layoutX="145.0" layoutY="294.0">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
