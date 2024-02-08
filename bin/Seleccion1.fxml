@@ -1,12 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Seleccion1Controller">
    <children>
       <ImageView fx:id="img" fitHeight="279.0" fitWidth="200.0" layoutX="23.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="atras" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#atras" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <Button fx:id="atras" layoutX="14.0" layoutY="338.0" mnemonicParsing="false" onAction="#volver" prefHeight="35.0" prefWidth="114.0" text="Atras" />
+      <TableView fx:id="tablaFunciones" layoutX="236.0" layoutY="67.0" prefHeight="245.0" prefWidth="335.0">
+        <columns>
+          <TableColumn fx:id="fecha" prefWidth="75.199951171875" text="Fecha" />
+          <TableColumn fx:id="hora" prefWidth="58.4000244140625" text="Hora" />
+            <TableColumn fx:id="Sala" prefWidth="196.0" text="Sala" />
+        </columns>
+      </TableView>
+      <Label fx:id="titulo" layoutX="240.0" layoutY="11.0">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Button fx:id="sumar" layoutX="456.0" layoutY="338.0" mnemonicParsing="false" onAction="#sumarFuncion" prefHeight="35.0" prefWidth="114.0" text="Añadir" />
    </children>
 </AnchorPane>

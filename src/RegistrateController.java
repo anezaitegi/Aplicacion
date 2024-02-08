@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class RegistrateController implements Initializable {
@@ -28,7 +29,7 @@ public class RegistrateController implements Initializable {
     private TextField contacto;
 
     @FXML
-    private TextField password;
+    private PasswordField password;
 
     @FXML
     private TextField dni;
@@ -92,10 +93,12 @@ public class RegistrateController implements Initializable {
         boolean correcto = true;
 
         for (int i = 0; i < clientes.length; i++) {
-            if (clientes[i].getDNI().equals(DNI)) {
-                mostrarAlertUsuarioExiste();
-                LoginController.setObjetos(compras, clientes);
-                Main.setRoot("Login");
+            if (clientes[i] != null) {
+                if (clientes[i].getDNI().equals(DNI)) {
+                    mostrarAlertUsuarioExiste();
+                    LoginController.setObjetos(compras, clientes);
+                    Main.setRoot("Login");
+                }
             }
         }
         Cliente client = new Cliente();
@@ -135,6 +138,7 @@ public class RegistrateController implements Initializable {
             for (int i = 0; i < clientes.length; i++) {
                 if (clientes[i] == null) {
                     clientes[i] = client;
+                    CarritoController.setObjetos(client, compras);
                     Main.setRoot("Carrito");
                 }
             }

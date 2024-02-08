@@ -1,12 +1,17 @@
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 
-public class ticketsController {
+public class ticketsController implements Initializable {
 
     @FXML
-    private Button atras5;
+    private Button guardar;
 
     @FXML
     private Label informacionCompra;
@@ -15,6 +20,18 @@ public class ticketsController {
     private Button inicio;
 
     @FXML
-    private Text ticket;
+    public void initialize(URL location, ResourceBundle resources) {
+        
+    }
+
+    @FXML
+    void guardarTXT(ActionEvent event) {
+
+    }
+
+    @FXML
+    void startAgain(ActionEvent event) throws IOException {
+        Main.setRoot("Bienvenida");
+    }
 
 }

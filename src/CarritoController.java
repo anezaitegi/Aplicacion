@@ -43,20 +43,30 @@ public class CarritoController implements Initializable {
         alert.showAndWait();
     }
 
+    public static void setObjetos(Cliente client, Funcion[] funcions) throws SQLException {
+        cliente = client;
+        compras = funcions;
+        entradas = DAO.cargarEntradas();
+    }
+
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         contador = 0;
         double precio = 7.5;
+        String sesiones = "";
         for (int i = 0; i < compras.length; i++) {
             if (compras[i] != null) {
-                listado.setText(compras[i].toString());
+                sesiones = sesiones + compras[i].toString() + "\n";
                 contador++;
             }
         }
+        listado.setText(sesiones);
         if (contador == 2) {
-            precio = precio * contador * 20 / 100;
+            double descuento = precio * contador * 20 / 100;
+            precio = (precio * contador) - descuento;
         } else if (contador >= 3) {
-            precio = precio + contador * 30 / 100;
+            double descuento = precio * contador * 30 / 100;
+            precio = (precio * contador) - descuento;
         }
         precioResultado.setText(String.valueOf(precio));
     }
@@ -67,15 +77,17 @@ public class CarritoController implements Initializable {
         int id = 0;
         entradas = DAO.cargarEntradas();
         for (int i=0; i<entradas.length; i++){
-            if (entradas[i].getCliente() == null) {
-                id++;
-            }else{
-                Date fecha = new Date();
-                entradas[i] = new Entrada(id, fecha, cliente, compras[contador], 7.5);
-                id++;
-                contador--;
-                if (contador == -1) {
-                    break;
+            if (entradas[i] != null) {
+                if (entradas[i].getCliente() == null) {
+                    id++;
+                }else{
+                    Date fecha = new Date();
+                    entradas[i] = new Entrada(id, fecha, cliente, compras[contador], 7.5);
+                    id++;
+                    contador--;
+                    if (contador == -1) {
+                        break;
+                    }
                 }
             }
         }

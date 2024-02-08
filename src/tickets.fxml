@@ -3,13 +3,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketsController">
    <children>
-      <Text fx:id="ticket" layoutX="288.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ticket" />
-      <Button fx:id="atras5" layoutX="448.0" layoutY="350.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Guardar" />
-      <Button fx:id="inicio" layoutX="39.0" layoutY="347.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="114.0" text="Inicio" />
-      <Label fx:id="informacionCompra" layoutX="201.0" layoutY="52.0" prefHeight="324.0" prefWidth="211.0" />
+      <Button fx:id="guardar" layoutX="450.0" layoutY="338.0" mnemonicParsing="false" onAction="#guardarTXT" prefHeight="35.0" prefWidth="114.0" text="Guardar" />
+      <Button fx:id="inicio" layoutX="29.0" layoutY="338.0" mnemonicParsing="false" onAction="#startAgain" prefHeight="35.0" prefWidth="114.0" text="Inicio" />
+      <Label fx:id="informacionCompra" layoutX="125.0" layoutY="60.0" prefHeight="253.0" prefWidth="349.0" />
+      <Label layoutX="261.0" layoutY="14.0" text="Ticket">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

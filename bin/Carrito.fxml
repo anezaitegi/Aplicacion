@@ -14,7 +14,10 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="listado" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0" />
+      <Label fx:id="listado" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
       <Label layoutX="38.0" layoutY="294.0" text="Precio final:">
          <font>
             <Font size="18.0" />

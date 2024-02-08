@@ -34,7 +34,7 @@ public class Cliente {
         String NIF_STRING_ASOCIATION = "TRWAGMYFPDXBNJZSQVHLCKE";
         int numeroDNI;
         char letraDNI = dNI.charAt(8);
-        numeroDNI = Integer.valueOf(dNI.substring(0, 7));
+        numeroDNI = Integer.valueOf(dNI.substring(0, 8));
         if (NIF_STRING_ASOCIATION.charAt(numeroDNI % 23) == letraDNI) {
             DNI = dNI;
         } else {
@@ -105,4 +105,8 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    public static void main(String[] args) throws Exception {
+        Cliente c = new Cliente();
+        c.setDNI("72597703C");
+    }
 }

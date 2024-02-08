@@ -1,4 +1,5 @@
 import java.io.IOException;
+import java.sql.SQLException;
 
 import Clases.Cliente;
 import Clases.Funcion;
@@ -6,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
 public class LoginController {
@@ -23,7 +25,7 @@ public class LoginController {
     private Button continuar;
 
     @FXML
-    private TextField pass;
+    private PasswordField pass;
 
     public static void setObjetos(Funcion[] listaFuncions, Cliente[] listaClientes) {
         clientes = listaClientes;
@@ -50,21 +52,29 @@ public class LoginController {
     }
 
     @FXML
-    void verificar(ActionEvent event) throws IOException {
+    void verificar(ActionEvent event) throws IOException, SQLException {
         String login;
         String password;
         login = Dni.getText();
         password = pass.getText();
+        boolean incorrecto = false;
         boolean noExiste = false;
 
         for (int i = 0; i < clientes.length; i++) {
-            if (login.equalsIgnoreCase(clientes[i].getDNI()) && password.equals(clientes[i].getPassword())) {
-                mostrarAlertConfirmacion();
-                Main.setRoot("Carrito");
-                noExiste = true;
+            if (clientes[i] != null) {
+                if (login.equalsIgnoreCase(clientes[i].getDNI()) && password.equals(clientes[i].getPassword())) {
+                    mostrarAlertConfirmacion();
+                    CarritoController.setObjetos(clientes[i], compras);
+                    Main.setRoot("Carrito");
+                    break;
+                } else if (login.equalsIgnoreCase(clientes[i].getDNI())) {
+                    incorrecto = true;
+                    break;
+                }
             }
+
         }
-        if (noExiste) {
+        if (incorrecto) {
             mostrarAlertError();
             Dni.clear();
             pass.clear();
