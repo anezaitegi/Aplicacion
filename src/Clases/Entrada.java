@@ -64,4 +64,12 @@ public class Entrada {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Entrada [id=" + id + ", fecha=" + fecha + ", cliente=" + cliente.toString() + ", funcion=" + funcion.toString() + ", precio="
+                + precio + "]";
+    }
+
+    
+
 }

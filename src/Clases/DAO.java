@@ -1,6 +1,7 @@
 package Clases;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,18 +30,26 @@ public class DAO {
         return "Select * from " + tabla;
     }
 
-    private static String queryPeli(String cine) {
-        return "select distinct p.* from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = '"
-                + cine + "'";
+    private static String queryPeli() {
+        return "select distinct p.* from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = ?";
     }
 
-    private static String queryFuncion(int peli, String cine) {
-        return "select s.Nombre, s.Sala_Codigo, f.Funcion_Codigo, f.Fecha, f.Horario from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = '"
-                + cine + "' and p.Pelicula_Codigo = " + peli;
+    private static String queryFuncion() {
+        return "select s.Nombre, s.Sala_Codigo, f.Funcion_Codigo, f.Fecha, f.Horario from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = ? and p.Pelicula_Codigo = ?";
+    }
+
+    private static String insertCliente() {
+        return "insert into cliente values (?, ?, ?, ?, ?, ?)";
+    }
+
+    private static String insertEntrada() {
+        return "insert into entrada values (?, ?, ?, ?, ?)";
     }
 
     public static Funcion[] cargarFunciones(String cine, Pelicula peli) throws Exception {
-        PreparedStatement st = con.prepareStatement(queryFuncion(peli.getId(), cine));
+        PreparedStatement st = con.prepareStatement(queryFuncion());
+        st.setString(1, cine);
+        st.setInt(2, peli.getId());
         ResultSet rs = st.executeQuery();
         Funcion[] listaFunciones = new Funcion[10];
         int contador = 0;
@@ -53,7 +62,8 @@ public class DAO {
     }
 
     public static Pelicula[] cargarPeliculas(String cine) throws Exception {
-        PreparedStatement st = con.prepareStatement(queryPeli(cine));
+        PreparedStatement st = con.prepareStatement(queryPeli());
+        st.setString(1, cine);
         ResultSet rs = st.executeQuery();
         Pelicula[] listaPeliculas = new Pelicula[10];
         int contador = 0;
@@ -90,4 +100,37 @@ public class DAO {
         return listaEntradas;
     }
 
+    public static Cine[] cargarCine() throws SQLException {
+        PreparedStatement st = con.prepareStatement(infoTabla("cine"));
+        ResultSet rs = st.executeQuery();
+        Cine[] listaCines = new Cine[3];
+        int contador = 0;
+        while (rs.next()) {
+            listaCines[contador] = new Cine(rs.getInt(1), rs.getString(2), rs.getString(3), null);
+            contador++;
+        }
+        return listaCines;
+    }
+
+    public static void insertCliente(Cliente client) throws SQLException {
+        PreparedStatement st = con.prepareStatement(insertCliente());
+        st.setString(1, client.getDNI());
+        st.setString(2, client.getPassword());
+        st.setString(3, client.getNombre());
+        st.setString(4, client.getApellido());
+        st.setString(5, client.getSexo());
+        st.setString(6, client.getTelefono());
+        st.execute();
+    }
+
+    public static void insertEntrada(Entrada entrada) throws SQLException {
+        PreparedStatement st = con.prepareStatement(insertEntrada());
+        st.setInt(1, entrada.getId());
+        st.setInt(2, entrada.getFuncion().getId());
+        java.sql.Date date = new Date(entrada.getFecha().getTime());
+        st.setDate(3, date);
+        st.setDouble(4, entrada.getPrecio());
+        st.setString(5, entrada.getCliente().getDNI());
+        st.execute();
+    }
 }

@@ -105,8 +105,10 @@ public class Cliente {
         this.telefono = telefono;
     }
 
-    public static void main(String[] args) throws Exception {
-        Cliente c = new Cliente();
-        c.setDNI("72597703C");
+    @Override
+    public String toString() {
+        return DNI + "\n" + nombre +" "+ apellido + "\n" + telefono;
     }
+
+    
 }

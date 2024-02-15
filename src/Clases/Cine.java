@@ -56,4 +56,9 @@ public class Cine {
         this.listaSalas = listaSalas;
     }
 
+    @Override
+    public String toString() {
+        return nombre + "\n" + direccion;
+    }
+
 }

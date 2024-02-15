@@ -18,6 +18,7 @@ public class RegistrateController implements Initializable {
 
     private static Cliente[] clientes;
     private static Funcion[] compras;
+    private static String cine;
 
     @FXML
     private TextField apellido;
@@ -65,8 +66,9 @@ public class RegistrateController implements Initializable {
         alert.showAndWait();
     }
 
-    public static void setFuncion(Funcion[] elegidos) throws Exception {
+    public static void setFuncion(Funcion[] elegidos, String cineName) throws Exception {
         compras = elegidos;
+        cine = cineName;
         clientes = DAO.cargarClientes();
     }
 
@@ -78,7 +80,7 @@ public class RegistrateController implements Initializable {
 
     @FXML
     void irLogin(ActionEvent event) throws IOException {
-        LoginController.setObjetos(compras, clientes);
+        LoginController.setObjetos(compras, clientes, cine);
         Main.setRoot("Login");
     }
 
@@ -96,7 +98,8 @@ public class RegistrateController implements Initializable {
             if (clientes[i] != null) {
                 if (clientes[i].getDNI().equals(DNI)) {
                     mostrarAlertUsuarioExiste();
-                    LoginController.setObjetos(compras, clientes);
+                    LoginController.setObjetos(compras, clientes, cine);
+                    correcto = false;
                     Main.setRoot("Login");
                 }
             }
@@ -138,8 +141,10 @@ public class RegistrateController implements Initializable {
             for (int i = 0; i < clientes.length; i++) {
                 if (clientes[i] == null) {
                     clientes[i] = client;
-                    CarritoController.setObjetos(client, compras);
+                    CarritoController.setObjetos(client, compras, cine);
+                    DAO.insertCliente(client);
                     Main.setRoot("Carrito");
+                    break;
                 }
             }
         } else {

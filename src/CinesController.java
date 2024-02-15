@@ -1,12 +1,17 @@
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import Clases.Funcion;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 
-public class CinesController {
+public class CinesController implements Initializable {
 
     private static Funcion[] funcionesElegidas = new Funcion[100];
+    private static String cine;
 
     @FXML
     private Button cineDonosti;
@@ -29,6 +34,30 @@ public class CinesController {
     @FXML
     private Button terminar;
 
+    @FXML
+    public void initialize(URL location, ResourceBundle resources) {
+        if (cine != null) {
+            if (cine.equals("Donostia")) {
+                cineLasarte.setDisable(true);
+                cineUsurbil.setDisable(true);
+            }
+            if (cine.equals("Lasarte")) {
+                cineUsurbil.setDisable(true);
+                cineDonosti.setDisable(true);
+            }
+            if (cine.equals("Usurbil")) {
+                cineDonosti.setDisable(true);
+                cineLasarte.setDisable(true);
+            }
+        }
+    }
+
+    public static void setCine(boolean atras) {
+        if (atras && funcionesElegidas[0] == null) {
+            cine = null;
+        }
+    }
+
     public static void setReinicio(boolean reiniciar) {
         if (reiniciar) {
             funcionesElegidas = new Funcion[100];
@@ -46,26 +75,29 @@ public class CinesController {
 
     @FXML
     void infoDonos(ActionEvent event) throws Exception {
-        PeliculaController.setCineNombre("Donostia");
+        cine = "Donostia";
+        PeliculaController.setCineNombre(cine);
         Main.setRoot("Pelicula");
     }
 
     @FXML
     void infoLasarte(ActionEvent event) throws Exception {
-        PeliculaController.setCineNombre("Lasarte");
+        cine = "Lasarte";
+        PeliculaController.setCineNombre(cine);
         Main.setRoot("Pelicula");
     }
 
     @FXML
     void infoUsurbil(ActionEvent event) throws Exception {
-        PeliculaController.setCineNombre("Usurbil");
+        cine = "Usurbil";
+        PeliculaController.setCineNombre(cine);
         Main.setRoot("Pelicula");
     }
 
     @FXML
     void irCarrito(ActionEvent event) throws Exception {
         if (funcionesElegidas[0] != null) {
-            RegistrateController.setFuncion(funcionesElegidas);
+            RegistrateController.setFuncion(funcionesElegidas, cine);
             Main.setRoot("Registrate");
         } else {
             Main.setRoot("Bienvenida");

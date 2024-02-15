@@ -14,6 +14,7 @@ public class LoginController {
 
     private static Cliente[] clientes;
     private static Funcion[] compras;
+    private static String cine;
 
     @FXML
     private TextField Dni;
@@ -27,9 +28,10 @@ public class LoginController {
     @FXML
     private PasswordField pass;
 
-    public static void setObjetos(Funcion[] listaFuncions, Cliente[] listaClientes) {
+    public static void setObjetos(Funcion[] listaFuncions, Cliente[] listaClientes, String cineName) {
         clientes = listaClientes;
         compras = listaFuncions;
+        cine = cineName;
     }
 
     // Mensajes de acceso o no acceso
@@ -39,6 +41,15 @@ public class LoginController {
         alert.setHeaderText(null);
         alert.setTitle("Acceso denegado");
         alert.setContentText("¡Error! Usuario o contraseña incorrectos");
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void mostrarAlertNoExiste() {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText(null);
+        alert.setTitle("Acceso denegado");
+        alert.setContentText("¡Error! Usuario no encontrado.");
         alert.showAndWait();
     }
 
@@ -64,12 +75,16 @@ public class LoginController {
             if (clientes[i] != null) {
                 if (login.equalsIgnoreCase(clientes[i].getDNI()) && password.equals(clientes[i].getPassword())) {
                     mostrarAlertConfirmacion();
-                    CarritoController.setObjetos(clientes[i], compras);
+                    CarritoController.setObjetos(clientes[i], compras, cine);
+                    noExiste = false;
                     Main.setRoot("Carrito");
                     break;
                 } else if (login.equalsIgnoreCase(clientes[i].getDNI())) {
                     incorrecto = true;
+                    noExiste = false;
                     break;
+                } else {
+                    noExiste = true; 
                 }
             }
 
@@ -78,6 +93,10 @@ public class LoginController {
             mostrarAlertError();
             Dni.clear();
             pass.clear();
+        }
+        if (noExiste) {
+            mostrarAlertNoExiste();
+            Main.setRoot("Registrate");
         }
     }
 
