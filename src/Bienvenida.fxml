@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="pantallaSeguir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#cambiarVista" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BienvenidaC">
+<AnchorPane fx:id="pantallaSeguir" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#cambiarVista" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BienvenidaC">
    <children>
       <Label layoutX="130.0" layoutY="117.0" prefHeight="82.0" prefWidth="338.0" text="¡BIENVENIDO!" textFill="#fffdfd">
          <font>

@@ -8,9 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAO {
-    private static String url = "jdbc:mysql://localhost:3306/cinescoquette";
-    private static String user = "root";
-    private static String pass = "Admin1234";
+    private static String url = "jdbc:mysql://3.76.212.178:3306/coquettecines";
+    private static String user = "test";
+    private static String pass = "Yta12345678*";
 
     public static Connection openConnection() {
         try {
@@ -69,7 +69,7 @@ public class DAO {
         int contador = 0;
         while (rs.next()) {
             listaPeliculas[contador] = new Pelicula(rs.getInt(1), rs.getString(4), rs.getString(6), rs.getString(7),
-                    rs.getInt(2), rs.getInt(3), rs.getString(4));
+                    rs.getInt(2), rs.getInt(3), rs.getString(5));
             contador++;
         }
         return listaPeliculas;

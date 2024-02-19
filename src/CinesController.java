@@ -40,14 +40,20 @@ public class CinesController implements Initializable {
             if (cine.equals("Donostia")) {
                 cineLasarte.setDisable(true);
                 cineUsurbil.setDisable(true);
+                imgLasarte.setDisable(true);
+                imgUsurbil.setDisable(true);
             }
             if (cine.equals("Lasarte")) {
                 cineUsurbil.setDisable(true);
                 cineDonosti.setDisable(true);
+                imgUsurbil.setDisable(true);
+                imgDonosti.setDisable(true);
             }
             if (cine.equals("Usurbil")) {
                 cineDonosti.setDisable(true);
                 cineLasarte.setDisable(true);
+                imgDonosti.setDisable(true);
+                imgLasarte.setDisable(true);
             }
         }
     }
@@ -61,6 +67,7 @@ public class CinesController implements Initializable {
     public static void setReinicio(boolean reiniciar) {
         if (reiniciar) {
             funcionesElegidas = new Funcion[100];
+            cine = null;
         }
     }
 

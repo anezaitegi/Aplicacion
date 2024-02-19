@@ -5,25 +5,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarritoController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CarritoController">
    <children>
-      <Button fx:id="comprar" layoutX="460.0" layoutY="342.0" mnemonicParsing="false" onAction="#comprar" prefHeight="35.0" prefWidth="114.0" text="Comprar" />
-      <Button fx:id="volver" layoutX="38.0" layoutY="342.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="35.0" prefWidth="114.0" text="Anular" />
-      <Label layoutX="255.0" layoutY="14.0" text="Carrito">
+      <Button fx:id="comprar" layoutX="460.0" layoutY="342.0" mnemonicParsing="false" onAction="#comprar" prefHeight="35.0" prefWidth="114.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: rgb(0, 0, 0, 0);" text="Comprar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="volver" layoutX="38.0" layoutY="342.0" mnemonicParsing="false" onAction="#reiniciar" prefHeight="35.0" prefWidth="114.0" style="-fx-border-color: white; -fx-border-radius: 5px; -fx-background-color: rgb(0, 0, 0, 0);" text="Anular" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="255.0" layoutY="14.0" text="Carrito" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="listado" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0">
+      <Label fx:id="listado" alignment="TOP_LEFT" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
          </font></Label>
-      <Label layoutX="38.0" layoutY="294.0" text="Precio final:">
+      <Label layoutX="38.0" layoutY="294.0" text="Precio final:" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="precioResultado" layoutX="145.0" layoutY="294.0">
+      <Label fx:id="precioResultado" layoutX="145.0" layoutY="294.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>

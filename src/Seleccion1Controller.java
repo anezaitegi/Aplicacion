@@ -16,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Seleccion1Controller implements Initializable {
@@ -68,6 +69,8 @@ public class Seleccion1Controller implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        Image portada = new Image(peli.getImgURL());
+        img.setImage(portada);
         titulo.setText(peli.getTitulo());
         fecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         hora.setCellValueFactory(new PropertyValueFactory<>("hora"));

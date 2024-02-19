@@ -13,6 +13,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 public class RegistrateController implements Initializable {
 
@@ -47,6 +49,12 @@ public class RegistrateController implements Initializable {
     @FXML
     private ComboBox<String> sexo;
 
+    @FXML
+    private TextField campoPassword;
+
+    @FXML
+    private ImageView imgPassword;
+
     // Mensajes de alerta
     @FXML
     private void mostrarAlertUsuarioExiste() {
@@ -76,6 +84,14 @@ public class RegistrateController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         sexo.getItems().addAll("Mujer", "Hombre");
         sexo.setValue("Mujer");
+        dni.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        nombre.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        apellido.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        password.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        contacto.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        sexo.setStyle("-fx-text-fill: white; -fx-background-color: rgba(240, 248, 255, 0.617); -fx-border-color: white; -fx-border-radius: 5px;");
+        campoPassword.setStyle("-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        campoPassword.setDisable(true);
     }
 
     @FXML
@@ -155,6 +171,22 @@ public class RegistrateController implements Initializable {
     @FXML
     void volver(ActionEvent event) throws IOException {
         Main.setRoot("Cines");
+    }
+
+    @FXML
+    void mostrarPassword(MouseEvent event) {
+        campoPassword.setDisable(false);
+        campoPassword.setText(password.getText());
+        password.clear();
+        password.setDisable(true);
+    }
+
+    @FXML
+    void ocultarPassword(MouseEvent event) {
+        password.setDisable(false);
+        password.setText(campoPassword.getText());
+        campoPassword.clear();
+        campoPassword.setDisable(true);
     }
 
 }

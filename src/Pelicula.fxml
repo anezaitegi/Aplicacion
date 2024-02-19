@@ -6,13 +6,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeliculaController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PeliculaController">
    <children>
       <ImageView fx:id="img1" fitHeight="186.0" fitWidth="131.0" layoutX="29.0" layoutY="68.0" onMouseClicked="#elegir1" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img2" fitHeight="186.0" fitWidth="131.0" layoutX="171.0" layoutY="68.0" onMouseClicked="#elegir2" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img3" fitHeight="186.0" fitWidth="131.0" layoutX="312.0" layoutY="68.0" onMouseClicked="#elegir3" pickOnBounds="true" preserveRatio="true" />
       <ImageView fx:id="img4" fitHeight="186.0" fitWidth="131.0" layoutX="454.0" layoutY="68.0" onMouseClicked="#elegir4" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="atras" layoutX="42.0" layoutY="347.0" mnemonicParsing="false" onAction="#volver" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Atras" textFill="WHITE" />
+      <Button fx:id="atras" layoutX="20.0" layoutY="340.0" mnemonicParsing="false" onAction="#volver" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Atras" textFill="WHITE" />
       <Label fx:id="peli1" alignment="CENTER" layoutX="37.0" layoutY="266.0" prefHeight="46.0" prefWidth="131.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="14.0" />

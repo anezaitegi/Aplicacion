@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CinesController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CinesController">
    <children>
       <Label layoutX="216.0" layoutY="22.0" text="Elige un cine" textFill="WHITE">
          <font>
@@ -26,9 +26,21 @@
          <image>
             <Image url="@Fotos/Donos.jpg" />
          </image></ImageView>
-      <Button fx:id="cineUsurbil" layoutX="52.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoUsurbil" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Usurbil" textFill="WHITE" />
-      <Button fx:id="cineLasarte" layoutX="243.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoLasarte" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Lasarte" textFill="WHITE" />
-      <Button fx:id="cineDonosti" layoutX="432.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoDonos" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Donostia" textFill="WHITE" />
-      <Button fx:id="terminar" layoutX="447.0" layoutY="338.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="35.0" prefWidth="114.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Finalizar" textFill="WHITE" />
+      <Button fx:id="cineUsurbil" layoutX="52.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoUsurbil" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Usurbil" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="cineLasarte" layoutX="243.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoLasarte" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Lasarte" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="cineDonosti" layoutX="432.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoDonos" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Donostia" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="terminar" layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Finalizar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
    </children>
 </AnchorPane>

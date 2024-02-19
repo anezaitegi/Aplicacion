@@ -1,5 +1,8 @@
 package Clases;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 public class Cliente {
     private String DNI;
     private String nombre;
@@ -11,7 +14,8 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String dNI, String nombre, String apellido, String sexo, String password, String telefono) throws Exception {
+    public Cliente(String dNI, String nombre, String apellido, String sexo, String password, String telefono)
+            throws Exception {
         DNI = dNI;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -40,7 +44,7 @@ public class Cliente {
         } else {
             throw new Exception("DNI incorrecto");
         }
-        
+
     }
 
     public String getNombre() {
@@ -91,7 +95,18 @@ public class Cliente {
 
     public void setPassword(String password) throws Exception {
         if (password.length() <= 255) {
-            this.password = password;
+            try {
+                MessageDigest m = MessageDigest.getInstance("MD5");
+                m.update(password.getBytes());
+                byte[] bytes = m.digest();
+                StringBuilder s = new StringBuilder();
+                for (int i = 0; i < bytes.length; i++) {
+                    s.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+                }
+                this.password = s.toString();
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
         } else {
             throw new Exception("Texto demasiado largo");
         }
@@ -102,13 +117,14 @@ public class Cliente {
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if (telefono.length() > 0 && telefono.length() < 15) {
+            this.telefono = telefono;
+        }
     }
 
     @Override
     public String toString() {
-        return DNI + "\n" + nombre +" "+ apellido + "\n" + telefono;
+        return DNI + "\n" + nombre + " " + apellido + "\n" + telefono;
     }
 
-    
 }

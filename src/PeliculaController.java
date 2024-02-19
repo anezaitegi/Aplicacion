@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -95,6 +96,8 @@ public class PeliculaController implements Initializable {
         for (int i = 0; i < 4; i++) {
             if (listaPeliculas[i] != null) {
                 titulos[i].setText(listaPeliculas[i].getTitulo());
+                Image portada = new Image(listaPeliculas[i].getImgURL());
+                imgs[i].setImage(portada);
             } else {
                 titulos[i].setDisable(true);
                 imgs[i].setDisable(true);

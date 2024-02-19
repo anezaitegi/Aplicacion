@@ -6,34 +6,40 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketsController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ticketsController">
    <children>
-      <Button fx:id="guardar" layoutX="450.0" layoutY="338.0" mnemonicParsing="false" onAction="#guardarTXT" prefHeight="35.0" prefWidth="114.0" text="Guardar" />
-      <Button fx:id="inicio" layoutX="29.0" layoutY="338.0" mnemonicParsing="false" onAction="#startAgain" prefHeight="35.0" prefWidth="114.0" text="Inicio" />
-      <Label layoutX="261.0" layoutY="14.0" text="Ticket">
+      <Button fx:id="guardar" layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#guardarTXT" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgb (0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Guardar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Button fx:id="inicio" layoutX="20.0" layoutY="340.0" mnemonicParsing="false" onAction="#startAgain" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Inicio" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="261.0" layoutY="14.0" text="Ticket" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="infoEntradas" alignment="TOP_LEFT" layoutX="29.0" layoutY="70.0" prefHeight="258.0" prefWidth="260.0" wrapText="true">
+      <Label fx:id="infoEntradas" alignment="TOP_LEFT" layoutX="29.0" layoutY="70.0" prefHeight="258.0" prefWidth="260.0" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="infoCine" alignment="TOP_LEFT" layoutX="311.0" layoutY="70.0" prefHeight="71.0" prefWidth="260.0" wrapText="true">
+      <Label fx:id="infoCine" alignment="TOP_CENTER" layoutX="311.0" layoutY="70.0" prefHeight="71.0" prefWidth="260.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
       <Separator layoutX="297.0" layoutY="60.0" orientation="VERTICAL" prefHeight="292.0" prefWidth="2.0" />
       <Separator layoutX="339.0" layoutY="146.0" prefWidth="200.0" />
-      <Label fx:id="infoCliente" alignment="TOP_LEFT" layoutX="311.0" layoutY="159.0" prefHeight="80.0" prefWidth="260.0" wrapText="true">
+      <Label fx:id="infoCliente" alignment="TOP_CENTER" layoutX="311.0" layoutY="159.0" prefHeight="80.0" prefWidth="260.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
       <Separator layoutX="339.0" layoutY="260.0" prefWidth="200.0" />
-      <Label fx:id="Fecha" layoutX="311.0" layoutY="284.0">
+      <Label fx:id="Fecha" alignment="CENTER" layoutX="311.0" layoutY="284.0" textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font size="16.0" />
          </font>

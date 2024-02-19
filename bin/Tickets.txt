@@ -23,3 +23,29 @@ argenis salcedo
 
 Thu Feb 15 14:05:47 CET 2024
 ----------
+
+Handia 174 min - 15:00:00 - 2024-01-03 - Sala 1 - 7,5 euros
+Donostia
+31 de Agosto Kalea, 26, 20003 Donostia, Gipuzkoa
+72597703C
+Ane Zaitegi
+645734634
+Sun Feb 18 00:49:47 CET 2024
+----------
+El resplandor 146 min - 15:00:00 - 2024-01-01 - Sala 1 - 7,5 euros
+Usurbil
+Bo. Txiki-Erdi, 7, 20170 Usurbil, Gipuzkoa
+00000000T
+Jane Doe
+666666666
+Mon Feb 19 13:09:41 CET 2024
+----------
+La vida de Brian 94 min - 15:00:00 - 2024-01-06 - Sala 2 - 7,5 euros
+Handia 174 min - 15:00:00 - 2024-01-03 - Sala 1 - 7,5 euros
+Donostia
+31 de Agosto Kalea, 26, 20003 Donostia, Gipuzkoa
+16039608Y
+Cristina Holgado
+628947222
+Mon Feb 19 20:49:10 CET 2024
+----------
