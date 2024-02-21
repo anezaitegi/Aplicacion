@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import Clases.DAO;
 import Clases.Funcion;
 import Clases.Pelicula;
@@ -19,14 +18,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-public class Seleccion1Controller implements Initializable {
+public class SesionesController implements Initializable {
 
+    // Variable con el nombre de la peli y un array con las sesiones de la misma
     private static Pelicula peli;
     private static Funcion[] funciones;
 
-
     @FXML
-    private TableColumn<Funcion, String> Sala;
+    private TableColumn<Funcion, String> sala;
 
     @FXML
     private Button atras;
@@ -52,7 +51,10 @@ public class Seleccion1Controller implements Initializable {
     @FXML
     private Label titulo;
 
-    // Mensajes de acceso o no acceso
+    @FXML
+    private Label sinopsis;
+
+    // Mensaje de alerta por no elegir una sesion
     @FXML
     private void mostrarAlertError() {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -62,6 +64,7 @@ public class Seleccion1Controller implements Initializable {
         alert.showAndWait();
     }
 
+    // Funcion para pasar la pelicula elegida y cargar las sesiones desde la BBDD
     public static void setPelicula(Pelicula pelicula, String cine) throws Exception {
         peli = pelicula;
         funciones = DAO.cargarFunciones(cine, pelicula);
@@ -69,45 +72,41 @@ public class Seleccion1Controller implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        // Ponemos la imagen de la peli, el titulo y la descripción
         Image portada = new Image(peli.getImgURL());
         img.setImage(portada);
         titulo.setText(peli.getTitulo());
+        sinopsis.setText(peli.getDescripcion());
+        // además de cada sesion disponible
         fecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
         hora.setCellValueFactory(new PropertyValueFactory<>("hora"));
-        Sala.setCellValueFactory(new PropertyValueFactory<>("sala"));
-
+        sala.setCellValueFactory(new PropertyValueFactory<>("sala"));
         data = FXCollections.observableArrayList();
-
-        for(int i=0; i<funciones.length; i++) {
+        for (int i = 0; i < funciones.length; i++) {
             if (funciones[i] != null) {
                 data.add(funciones[i]);
             }
         }
-
         tablaFunciones.setItems(data);
     }
 
+    // Se lee si se ha elegido una Funcion de la tabla, se guarda en una clase
+    // Funcion y se manda a la vista de Cines antes de ir a la misma
     @FXML
     void sumarFuncion(ActionEvent event) throws IOException {
         Funcion seleccion = tablaFunciones.getSelectionModel().getSelectedItem();
-
         if (tablaFunciones.getSelectionModel().getSelectedItem() == null) {
             mostrarAlertError();
-        }else{
+        } else {
             CinesController.setFunciones(seleccion);
             Main.setRoot("Cines");
         }
     }
 
+    // Metodo para volver sin elegir ninguna sesión a la vista de pelis
     @FXML
     void volver(ActionEvent event) throws IOException {
-        Main.setRoot("Pelicula");
+        Main.setRoot("Peliculas");
     }
-
-
-
-    
-
-    
 
 }

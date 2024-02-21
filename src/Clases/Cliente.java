@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Cliente {
+    // Atributos de la clase cliente
     private String DNI;
     private String nombre;
     private String apellido;
@@ -11,9 +12,11 @@ public class Cliente {
     private String password;
     private String telefono;
 
+    // Constructor vacio
     public Cliente() {
     }
 
+    // Constructor de todos los atributos
     public Cliente(String dNI, String nombre, String apellido, String sexo, String password, String telefono)
             throws Exception {
         DNI = dNI;
@@ -30,6 +33,7 @@ public class Cliente {
         this.telefono = telefono;
     }
 
+    // Getters y setters de los atributos con sus respectivas restricciones
     public String getDNI() {
         return DNI;
     }
@@ -95,6 +99,7 @@ public class Cliente {
 
     public void setPassword(String password) throws Exception {
         if (password.length() <= 255) {
+            // Encriptamos la contraseña antes de guardarla
             try {
                 MessageDigest m = MessageDigest.getInstance("MD5");
                 m.update(password.getBytes());
@@ -122,6 +127,7 @@ public class Cliente {
         }
     }
 
+    // Funcion que tiene en cada
     @Override
     public String toString() {
         return DNI + "\n" + nombre + " " + apellido + "\n" + telefono;

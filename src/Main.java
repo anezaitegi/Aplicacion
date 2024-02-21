@@ -1,5 +1,3 @@
-
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,8 +11,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        
-        stage.setTitle("CineUsurbil");
+        stage.setTitle("Cines ⋈coquette⋈");
         scene = new Scene(loadFXML("Bienvenida"));
         stage.setScene(scene);
         stage.setResizable(false);
@@ -33,5 +30,4 @@ public class Main extends Application {
     public static void main(String[] args) {
         launch();
     }
-    // comentando algo fafafdf adsasd
 }

@@ -20,7 +20,7 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <Label fx:id="listado" alignment="TOP_LEFT" layoutX="38.0" layoutY="60.0" prefHeight="218.0" prefWidth="526.0" textFill="WHITE" wrapText="true">
+      <Label fx:id="listado" alignment="TOP_LEFT" layoutX="38.0" layoutY="58.0" prefHeight="203.0" prefWidth="526.0" textFill="WHITE" wrapText="true">
          <font>
             <Font size="16.0" />
          </font></Label>
@@ -32,6 +32,11 @@
       <Label fx:id="precioResultado" layoutX="145.0" layoutY="294.0" textFill="WHITE">
          <font>
             <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="descuentoText" layoutX="38.0" layoutY="266.0" prefHeight="27.0" prefWidth="526.0" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
          </font>
       </Label>
    </children>

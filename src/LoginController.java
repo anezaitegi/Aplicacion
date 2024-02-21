@@ -4,7 +4,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
-
 import Clases.Cliente;
 import Clases.Funcion;
 import javafx.event.ActionEvent;
@@ -19,6 +18,9 @@ import javafx.scene.input.MouseEvent;
 
 public class LoginController implements Initializable {
 
+    // Variable con el nombre del cine, un array de la clase Funcion con las
+    // sesiones elegidas para comprar y un array de la clase Cliente para guardar
+    // los clientes de la BBDD
     private static Cliente[] clientes;
     private static Funcion[] compras;
     private static String cine;
@@ -41,6 +43,8 @@ public class LoginController implements Initializable {
     @FXML
     private ImageView imgPassword;
 
+    // Metodo para guardar las Funciones compradas en el array y el nombre del cine
+    // en la variable, además del array los clientes pasado por la vista anterior
     public static void setObjetos(Funcion[] listaFuncions, Cliente[] listaClientes, String cineName) {
         clientes = listaClientes;
         compras = listaFuncions;
@@ -77,59 +81,20 @@ public class LoginController implements Initializable {
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
+        // Poner el estilo de los textField
         Dni.setStyle(
                 "-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
         pass.setStyle(
                 "-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
         campoPassword.setStyle(
                 "-fx-text-fill: white; -fx-background-color: rgb(0, 0, 0, 0); -fx-border-color: white; -fx-border-radius: 5px;");
+        // Inhabilitar el TextArea de la contraseña para poder elegir el PasswordArea
+        // solamente
         campoPassword.setDisable(true);
     }
 
-    @FXML
-    void verificar(ActionEvent event) throws IOException, SQLException {
-        String login;
-        String password;
-        login = Dni.getText();
-        password = encriptar(pass.getText());
-        System.out.println(password);
-        boolean incorrecto = false;
-        boolean noExiste = false;
-
-        for (int i = 0; i < clientes.length; i++) {
-            if (clientes[i] != null) {
-                if (login.equalsIgnoreCase(clientes[i].getDNI()) && password.equals(clientes[i].getPassword())) {
-                    mostrarAlertConfirmacion();
-                    CarritoController.setObjetos(clientes[i], compras, cine);
-                    noExiste = false;
-                    Main.setRoot("Carrito");
-                    break;
-                } else if (login.equalsIgnoreCase(clientes[i].getDNI())) {
-                    incorrecto = true;
-                    noExiste = false;
-                    break;
-                } else {
-                    noExiste = true;
-                }
-            }
-
-        }
-        if (incorrecto) {
-            mostrarAlertError();
-            Dni.clear();
-            pass.clear();
-        }
-        if (noExiste) {
-            mostrarAlertNoExiste();
-            Main.setRoot("Registrate");
-        }
-    }
-
-    @FXML
-    void volver(ActionEvent event) throws IOException {
-        Main.setRoot("Registrate");
-    }
-
+    // Funciones para que al pasar el cursor por la imagen del ojo se vea la
+    // contraseña
     @FXML
     void mostrarPassword(MouseEvent event) {
         campoPassword.setDisable(false);
@@ -147,6 +112,61 @@ public class LoginController implements Initializable {
     }
 
     @FXML
+    void verificar(ActionEvent event) throws IOException, SQLException {
+        // Se guarda el DNI en una variable y la contraseña en otra después de
+        // encriptarla, por supuesto
+        String login = Dni.getText();
+        String password = encriptar(pass.getText());
+        // Creamos dos buleanos distintos para saber si el usuario es incorrecto o si no
+        // existe
+        boolean incorrecto = false;
+        boolean noExiste = false;
+        // Comprobamos el usuario y la contraseña
+        for (int i = 0; i < clientes.length; i++) {
+            if (clientes[i] != null) { // Si el cliente no es null
+                if (login.equalsIgnoreCase(clientes[i].getDNI()) // y si coinciden
+                        && password.equals(clientes[i].getPassword())) {
+                    // mostramos la alerta
+                    mostrarAlertConfirmacion();
+                    // "apagamos" el buleano de que no existe
+                    noExiste = false;
+                    // pasamos a la vista del carrito y pasamos el cliente en concreto,
+                    // el nombre del cine y el array de las sesiones compradas
+                    CarritoController.setObjetos(clientes[i], compras, cine);
+                    Main.setRoot("Carrito");
+                    break;
+                } else if (login.equalsIgnoreCase(clientes[i].getDNI())) { // si existe el DNI
+                    // "apagamos" el buleano de que no existe y "encendemos" el de incorrecto
+                    incorrecto = true;
+                    noExiste = false;
+                    break;
+                } else { // si el DNI no existe
+                    // "encendemos" el buleano de que no existe
+                    noExiste = true;
+                }
+            }
+        }
+        if (incorrecto) { // si es incorrecto
+            // mostramos la alerta y vaciamos los TextFields
+            mostrarAlertError();
+            Dni.clear();
+            pass.clear();
+        }
+        if (noExiste) { // si el DNI no existe
+            // mostramos la alerta y pasamos a la vista de registrarse
+            mostrarAlertNoExiste();
+            Main.setRoot("Registrate");
+        }
+    }
+
+    // Metodo para volver a la página para registrarse
+    @FXML
+    void volver(ActionEvent event) throws IOException {
+        Main.setRoot("Registrate");
+    }
+
+    // Metodo para encriptar la contraseña
+    @FXML
     private String encriptar(String password) {
         try {
             MessageDigest m = MessageDigest.getInstance("MD5");
@@ -162,5 +182,4 @@ public class LoginController implements Initializable {
             return null;
         }
     }
-
 }

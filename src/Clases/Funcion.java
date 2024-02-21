@@ -4,15 +4,14 @@ import java.sql.Time;
 import java.util.Date;
 
 public class Funcion {
+    // Atributos de la clase Funcion
     private int id;
     private Sala sala;
     private Pelicula peli;
     private Date fecha;
     private Time hora;
 
-    public Funcion() {
-    }
-
+    // Constructor con todos los atributos
     public Funcion(int id, Sala sala, Pelicula peli, Date fecha, Time hora) {
         this.id = id;
         this.sala = sala;
@@ -21,49 +20,26 @@ public class Funcion {
         this.hora = hora;
     }
 
+    // Getter del ID
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Sala getSala() {
         return sala;
     }
 
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
-
-    public Pelicula getPeli() {
-        return peli;
-    }
-
-    public void setPeli(Pelicula peli) {
-        this.peli = peli;
-    }
-
     public Date getFecha() {
         return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
     }
 
     public Time getHora() {
         return hora;
     }
 
-    public void setHora(Time hora) {
-        this.hora = hora;
-    }
-
     @Override
     public String toString() {
-        return peli.toStringTituloDuracion() + " - " + hora + " - " +fecha+ " - "+sala.getNombre() + " - 7,5 euros";
+        return peli.toStringTituloDuracion() + " - " + hora + " - " + fecha + " - " + sala.getNombre() + " - 7,5 euros";
     }
 
 }

@@ -8,19 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Seleccion1Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url('/Fotos/Fondo_Cine.jpg'); -fx-background-size: cover;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SesionesController">
    <children>
-      <Label fx:id="titulo" layoutX="240.0" layoutY="11.0" textFill="WHITE">
+      <Label fx:id="titulo" layoutX="240.0" layoutY="10.0" textFill="WHITE">
          <font>
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="img" fitHeight="279.0" fitWidth="200.0" layoutX="23.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
-      <TableView fx:id="tablaFunciones" layoutX="236.0" layoutY="67.0" prefHeight="245.0" prefWidth="335.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
+      <ImageView fx:id="img" fitHeight="279.0" fitWidth="200.0" layoutX="23.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <TableView fx:id="tablaFunciones" layoutX="240.0" layoutY="203.0" prefHeight="131.0" prefWidth="335.0" style="-fx-background-color: rgba(255, 255, 255, 0);">
         <columns>
           <TableColumn fx:id="fecha" prefWidth="75.199951171875" style="-fx-background-color: rgba(255, 255, 255, 0);" text="Fecha" />
           <TableColumn fx:id="hora" prefWidth="58.4000244140625" text="Hora" />
-            <TableColumn fx:id="Sala" prefWidth="196.0" text="Sala" />
+            <TableColumn fx:id="sala" prefWidth="196.0" text="Sala" />
         </columns>
       </TableView>
       <Button fx:id="sumar" layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#sumarFuncion" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Añadir" textFill="WHITE">
@@ -31,5 +31,10 @@
          <font>
             <Font size="14.0" />
          </font></Button>
+      <Label fx:id="sinopsis" alignment="TOP_LEFT" layoutX="240.0" layoutY="56.0" prefHeight="166.0" prefWidth="335.0" textFill="WHITE" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

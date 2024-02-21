@@ -14,31 +14,31 @@
             <Font size="30.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgUsurbil" fitHeight="192.0" fitWidth="143.0" layoutX="45.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgUsurbil" fitHeight="200.0" fitWidth="140.0" layoutX="45.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Fotos/Usurbil.jpg" />
          </image></ImageView>
-      <ImageView fx:id="imgLasarte" fitHeight="192.0" fitWidth="143.0" layoutX="236.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgLasarte" fitHeight="200.0" fitWidth="140.0" layoutX="236.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Fotos/Lasarte.jpg" />
          </image></ImageView>
-      <ImageView fx:id="imgDonosti" fitHeight="192.0" fitWidth="143.0" layoutX="425.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgDonosti" fitHeight="200.0" fitWidth="140.0" layoutX="425.0" layoutY="89.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@Fotos/Donos.jpg" />
          </image></ImageView>
-      <Button fx:id="cineUsurbil" layoutX="52.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoUsurbil" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Usurbil" textFill="WHITE">
+      <Button fx:id="cineUsurbil" layoutX="54.0" layoutY="300.0" mnemonicParsing="false" onAction="#infoUsurbil" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Usurbil" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button fx:id="cineLasarte" layoutX="243.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoLasarte" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Lasarte" textFill="WHITE">
+      <Button fx:id="cineLasarte" layoutX="245.0" layoutY="300.0" mnemonicParsing="false" onAction="#infoLasarte" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Lasarte" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button fx:id="cineDonosti" layoutX="432.0" layoutY="290.0" mnemonicParsing="false" onAction="#infoDonos" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Donostia" textFill="WHITE">
+      <Button fx:id="cineDonosti" layoutX="434.0" layoutY="300.0" mnemonicParsing="false" onAction="#infoDonos" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Donostia" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>
-      <Button fx:id="terminar" layoutX="470.0" layoutY="340.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Finalizar" textFill="WHITE">
+      <Button fx:id="terminar" layoutX="470.0" layoutY="14.0" mnemonicParsing="false" onAction="#irCarrito" prefHeight="35.0" prefWidth="115.0" style="-fx-background-color: rgba(255, 255, 255, 0); -fx-border-color: white; -fx-border-radius: 5px;" text="Finalizar" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font></Button>

@@ -23,7 +23,6 @@ argenis salcedo
 
 Thu Feb 15 14:05:47 CET 2024
 ----------
-
 Handia 174 min - 15:00:00 - 2024-01-03 - Sala 1 - 7,5 euros
 Donostia
 31 de Agosto Kalea, 26, 20003 Donostia, Gipuzkoa
@@ -48,4 +47,59 @@ Donostia
 Cristina Holgado
 628947222
 Mon Feb 19 20:49:10 CET 2024
+----------
+El resplandor 146 min - 15:00:00 - 2024-01-01 - Sala Principal - 7,5 euros
+Usurbil
+Bo. Txiki-Erdi, 7, 20170 Usurbil, Gipuzkoa
+16039608Y
+Cristina Holgado
+628947222
+Tue Feb 20 11:30:43 CET 2024
+----------
+El planeta de los simios 115 min - 15:00:00 - 2024-01-07 - Sala 3 - 7,5 euros
+Scary Movie 88 min - 15:00:00 - 2024-01-05 - Sala 2 - 7,5 euros
+Lasarte
+Adarra Kalea, 5, 20160 Lasarte-Oria, Gipuzkoa
+00548304F
+Laz Alonso
+772175621
+Tue Feb 20 11:32:38 CET 2024
+----------
+El resplandor 146 min - 22:00:00 - 2024-01-01 - Sala Estelar - 7,5 euros
+El resplandor 146 min - 22:00:00 - 2024-01-01 - Sala Estelar - 7,5 euros
+El resplandor 146 min - 22:00:00 - 2024-01-01 - Sala Estelar - 7,5 euros
+Usurbil
+Bo. Txiki-Erdi, 7, 20170 Usurbil, Gipuzkoa
+20441415G
+Ash ketchum
+343252654
+Tue Feb 20 11:35:27 CET 2024
+----------
+Handia 174 min - 15:00:00 - 2024-01-03 - Sala Principal - 7,5 euros
+Handia 174 min - 15:00:00 - 2024-01-03 - Sala Principal - 7,5 euros
+Donostia
+31 de Agosto Kalea, 26, 20003 Donostia, Gipuzkoa
+16039608Y
+Cristina Holgado
+628947222
+Wed Feb 21 08:15:33 CET 2024
+----------
+El planeta de los simios 115 min - 15:00:00 - 2024-01-07 - Sala 3 - 7,5 euros
+Drácula 128 min - 15:00:00 - 2024-01-02 - Sala Principal - 7,5 euros
+Scary Movie 88 min - 15:00:00 - 2024-01-05 - Sala 2 - 7,5 euros
+El planeta de los simios 115 min - 17:30:00 - 2024-01-02 - Sala 3 - 7,5 euros
+Lasarte
+Adarra Kalea, 5, 20160 Lasarte-Oria, Gipuzkoa
+72597703C
+Ane Zaitegi
+645734634
+Wed Feb 21 13:13:33 CET 2024
+----------
+Scary Movie 88 min - 17:00:00 - 2024-01-02 - Sala Principal - 7,5 euros
+Usurbil
+Bo. Txiki-Erdi, 7, 20170 Usurbil, Gipuzkoa
+72597703C
+Ane Zaitegi
+645734634
+Wed Feb 21 15:41:01 CET 2024
 ----------

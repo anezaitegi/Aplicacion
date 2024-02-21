@@ -8,9 +8,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class DAO {
+    // La dirección de la base de datos en el servidor
+    // junto con el usuario de pleno acceso y su respectiva contraseña
     private static String url = "jdbc:mysql://3.76.212.178:3306/coquettecines";
     private static String user = "test";
     private static String pass = "Yta12345678*";
+
+    // La conexción con la BBDD
+    public static Connection con = openConnection();
 
     public static Connection openConnection() {
         try {
@@ -24,20 +29,22 @@ public class DAO {
         return null;
     }
 
-    public static Connection con = openConnection();
-
+    // Consulta básica de la tabla que se pase al metodo
     private static String infoTabla(String tabla) {
         return "Select * from " + tabla;
     }
 
+    // Consulta de las pelis disponibles para el cine elegido
     private static String queryPeli() {
         return "select distinct p.* from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = ?";
     }
 
+    // Consulta de las sesiones disponibles para la peli elegida
     private static String queryFuncion() {
         return "select s.Nombre, s.Sala_Codigo, f.Funcion_Codigo, f.Fecha, f.Horario from funcion f natural join sala s inner join pelicula p on f.Pelicula_Codigo = p.Pelicula_Codigo inner join cine c on s.Cine_Codigo = c.Cine_Codigo where c.Nombre = ? and p.Pelicula_Codigo = ?";
     }
 
+    // Frases hechas para insertar clientes y entradas en la BBDD
     private static String insertCliente() {
         return "insert into cliente values (?, ?, ?, ?, ?, ?)";
     }
@@ -46,6 +53,8 @@ public class DAO {
         return "insert into entrada values (?, ?, ?, ?, ?)";
     }
 
+    // Metodo que le das el cine y la pelicula y te devuelce las sesiones
+    // disponibles en un array de la clase Funcion
     public static Funcion[] cargarFunciones(String cine, Pelicula peli) throws Exception {
         PreparedStatement st = con.prepareStatement(queryFuncion());
         st.setString(1, cine);
@@ -61,6 +70,8 @@ public class DAO {
         return listaFunciones;
     }
 
+    // Metodo que le das el cine y te devuelve las peliculas disponibles en un array
+    // de la clase Pelicula
     public static Pelicula[] cargarPeliculas(String cine) throws Exception {
         PreparedStatement st = con.prepareStatement(queryPeli());
         st.setString(1, cine);
@@ -75,6 +86,7 @@ public class DAO {
         return listaPeliculas;
     }
 
+    // Metodo que te devuelve los clientes en un array de la clase Cliente
     public static Cliente[] cargarClientes() throws Exception {
         PreparedStatement st = con.prepareStatement(infoTabla("cliente"));
         ResultSet rs = st.executeQuery();
@@ -88,6 +100,7 @@ public class DAO {
         return listaClientes;
     }
 
+    // Metodo que te devuelve las entradas en un array de la clase Entrada
     public static Entrada[] cargarEntradas() throws SQLException {
         PreparedStatement st = con.prepareStatement(infoTabla("entrada"));
         ResultSet rs = st.executeQuery();
@@ -100,6 +113,7 @@ public class DAO {
         return listaEntradas;
     }
 
+    // Metodo que te devuelve los cines en un array de la clase Cine
     public static Cine[] cargarCine() throws SQLException {
         PreparedStatement st = con.prepareStatement(infoTabla("cine"));
         ResultSet rs = st.executeQuery();
@@ -112,6 +126,7 @@ public class DAO {
         return listaCines;
     }
 
+    // Metodo que inserta un nuevo cliente en la BBDD con toda su información
     public static void insertCliente(Cliente client) throws SQLException {
         PreparedStatement st = con.prepareStatement(insertCliente());
         st.setString(1, client.getDNI());
@@ -123,6 +138,7 @@ public class DAO {
         st.execute();
     }
 
+    // Metodo que inserta una nueva entrada en la BBD con toda su información
     public static void insertEntrada(Entrada entrada) throws SQLException {
         PreparedStatement st = con.prepareStatement(insertEntrada());
         st.setInt(1, entrada.getId());
