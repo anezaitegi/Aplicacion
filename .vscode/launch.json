@@ -5,35 +5,36 @@
             "name": "Cliente",
             "request": "launch",
             "mainClass": "Clases.Cliente",
-            "projectName": "Aplicacion_7be7cb2c"
+            "projectName": "Aplicacion_c3b9548e"
         },
+        
         {
             "type": "java",
             "name": "Funcion",
             "request": "launch",
             "mainClass": "Clases.Funcion",
-            "projectName": "Aplicacion_7be7cb2c"
+            "projectName": "Aplicacion_c3b9548e"
         },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Main",
-            "projectName": "Aplicacion_7be7cb2c"
+            "projectName": "Aplicacion_c3b9548e"
         },
         {
             "type": "java",
             "name": "Main",
             "request": "launch",
             "mainClass": "Controllers.Main",
-            "projectName": "Aplicacion_7be7cb2c"
+            "projectName": "Aplicacion_c3b9548e"
         },
         {
             "type": "java",
             "name": "Current File2",
             "request": "launch",
             "mainClass": "${file}",
-            "vmArgs": "--module-path C:\\Users\\Usuario\\Desktop\\Reto3\\Aplicacion\\lib\\javafx-sdk-21.0.1\\lib --add-modules javafx.controls,javafx.fxml"
+            "vmArgs": "--module-path C:\\Users\\Usuario\\Desktop\\MATERIAS\\RETOS\\reto3\\retoNew\\Aplicacion\\lib\\javafx-sdk-21.0.1\\lib --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
